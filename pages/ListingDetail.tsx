@@ -17,7 +17,7 @@ export const ListingDetail = () => {
     // Ensure we have user data to verify the seller status
     fetchAllUsers();
     if (id) {
-      listingService.getById(id).then(setListing);
+      listingService.getById(id).then((data) => setListing(data || null));
     }
   }, [id, fetchAllUsers]);
 
